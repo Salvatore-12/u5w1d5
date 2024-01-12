@@ -1,9 +1,11 @@
 package salvatoreassennato.u5w1d5.Entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -12,17 +14,26 @@ public class Postazione {
     @Getter
     private long id;
     private String descrizione;
-    private Tipo tipo;
+    private TipoPostazione tipo;
     private int massimoOccupanti;
     private Edificio edificio;
-    private int day;
+    private List<Prenotazione> prenotazioni=new ArrayList<>();
 
-    public Postazione(String descrizione, Tipo tipo, int massimoOccupanti, Edificio edificio, int day) {
+
+    public Postazione(String descrizione, TipoPostazione tipo, int massimoOccupanti, Edificio edificio) {
         this.descrizione = descrizione;
         this.tipo = tipo;
         this.massimoOccupanti = massimoOccupanti;
         this.edificio = edificio;
-        this.day = day;
+
+    }
+
+    public Postazione(String descrizione, TipoPostazione tipo, int massimoOccupanti, Edificio edificio, List<Prenotazione> prenotazioni) {
+        this.descrizione = descrizione;
+        this.tipo = tipo;
+        this.massimoOccupanti = massimoOccupanti;
+        this.edificio = edificio;
+        this.prenotazioni = prenotazioni;
     }
 
     @Override
@@ -33,7 +44,6 @@ public class Postazione {
                 ", tipo=" + tipo +
                 ", massimoOccupanti=" + massimoOccupanti +
                 ", edificio=" + edificio +
-                ", day=" + day +
                 '}';
     }
 }

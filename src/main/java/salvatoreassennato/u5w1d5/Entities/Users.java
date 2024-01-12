@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,6 +18,7 @@ public class Users {
    private String username;
    private String nomeCompleto;
    private String email;
+   private List<Prenotazione> prenotazioni=new ArrayList<>();
 
    public Users(String username, String nomeCompleto, String email) {
       this.username = username;

@@ -19,6 +19,15 @@ public class Edificio {
 
     private String città;
 
+    private Postazione postazione;
+
+    public Edificio(String nome, String indirizzo, String città, Postazione postazione) {
+        this.nome = nome;
+        this.indirizzo = indirizzo;
+        this.città = città;
+        this.postazione = postazione;
+    }
+
     public Edificio(String nome, String indirizzo, String città) {
         this.nome = nome;
         this.indirizzo = indirizzo;
@@ -27,10 +36,11 @@ public class Edificio {
 
     @Override
     public String toString() {
-        return "\n Edificio{" +
+        return "Edificio{" +
                 "nome='" + nome + '\'' +
                 ", indirizzo='" + indirizzo + '\'' +
                 ", città='" + città + '\'' +
+                ", postazione=" + postazione +
                 '}';
     }
 }
