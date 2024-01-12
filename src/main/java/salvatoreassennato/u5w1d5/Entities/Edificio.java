@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+
 public class Edificio {
     @Getter
     private long id;
@@ -18,6 +18,12 @@ public class Edificio {
     private String indirizzo;
 
     private String città;
+
+    public Edificio(String nome, String indirizzo, String città) {
+        this.nome = nome;
+        this.indirizzo = indirizzo;
+        this.città = città;
+    }
 
     @Override
     public String toString() {
